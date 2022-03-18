@@ -1,0 +1,119 @@
+#Program To Calculate And Print the Average Grade Point Of University,College And Other Educational Institution.
+
+# passing two parameters in display_average_grade_points function
+def display_average_grade_points(total_credit_hours,total_grades_point):
+    # Formula for grade point calculation
+    avg_grade_points = total_grades_point/total_credit_hours
+    # printing the calculated result
+    print(f'Your Average Grade Points Or CGPR ARE --->{avg_grade_points:.1f}')
+
+
+# This function total_credit is to calculate the total credits hours
+def total_credit():
+    print("This Function Calculating The Total Credit Hours\n")
+    # Taking initial value to start the while loop
+    initial_value = 0
+    # Before,calculation we take credit hour equal to zero
+    credit_hour = 0
+    # Subject is used to show the message for subject number
+    subject = 1
+    # Taking total number of subjects
+    No_Of_Subjects = int(input("Enter Total Number Of Subjects --->  "))
+    # while loop starts from here
+    while initial_value < No_Of_Subjects:
+        print(f'\nEnter Credit Hours For Subject {subject}')
+        # Taking the credit's hour for each subject
+        credit_hours = int(input("Enter A Credit Hour ---> "))
+        # credit_hour calculation the total credit hours
+        credit_hour = credit_hour+credit_hours
+        initial_value += 1
+        subject += 1
+    # After loop end then we will return the total credit hours
+    return credit_hour
+
+
+# Calculating total grade points
+def total_grade_point():
+    print("This Function Calculating The Total Grade Points\n")
+    subject = 1
+    initial_value = 0
+    grade_point_1 = 0
+    No_Of_Subjects = int(input("Enter Total Number Of Subjects That You Enter Before --->  "))
+    while initial_value<No_Of_Subjects:
+         print(f'\nEnter Credit Hours That You Enter Before For Subject {subject}')
+         credit_hours = int(input("Enter A Credit Hour ---> "))
+         # choose the grade points
+         Grade_Point=input("""Enter A Grade Point 
+         Where {A+==A, A==A, A-==AA, B+==B, B==BBB, B-==BB, C+==C, C-==CC, C==CCC, D==DD, D+=D} --->""")
+    # Condition to check for given grade and calculating the total grade points.
+         if Grade_Point == "A":
+             Grade_Points_1 = credit_hours*4.0
+
+         elif Grade_Point == "AA":
+             Grade_Points_1 = credit_hours*3.8
+
+         elif Grade_Point == "B":
+            Grade_Points_1 = credit_hours*3.4
+
+         elif Grade_Point == "BBB":
+            Grade_Points_1 = credit_hours*3.0
+
+         elif Grade_Point == "BB":
+            Grade_Points_1 = credit_hours*2.8
+
+         elif Grade_Point == "C":
+            Grade_Points_1 = credit_hours*2.4
+
+         elif Grade_Point == "CCC":
+            Grade_Points_1 = credit_hours*2.0
+
+         elif Grade_Point == "CC":
+            Grade_Points_1 = credit_hours*1.8
+
+         elif Grade_Point == "DD":
+            Grade_Points_1 = credit_hours*1
+
+         grade_point_1 = grade_point_1+Grade_Points_1
+         initial_value += 1
+         subject += 1
+    return grade_point_1
+
+
+print("""                      GRADE POINT TABLE
+         |------------------------------------------------------|
+         | Numeric Score | Alphabetic Order Grade | Grade Point |
+         |---------------|------------------------|-------------|
+         |  90 & above   |           A+           |     4.0     | 
+         |---------------|------------------------|-------------|
+         |   85-89       |           A            |     4.0     |
+         |---------------|------------------------|-------------|
+         |   80-84       |           A-           |     3.8     |
+         |---------------|------------------------|-------------|
+         |   75-79       |           B+           |     3.4     |
+         |---------------|------------------------|-------------|
+         |   71-74       |           B            |     3.0     |
+         |---------------|------------------------|-------------|
+         |   68-70       |           B-           |     2.8     |
+         |---------------|------------------------|-------------|
+         |   64-67       |           C+           |     2.4     |
+         |---------------|------------------------|-------------|
+         |   61-63       |           C            |     2.0     |
+         |---------------|------------------------|-------------|
+         |   57-60       |           C-           |     1.8     |
+         |---------------|------------------------|-------------|
+         |   53-56       |           D+           |     1.4     |
+         |---------------|------------------------|-------------|
+         |   50-52       |           D            |     1.0     |
+         |---------------|------------------------|-------------|
+         |   BELOW       |         FAILS          |     0.0     |
+         |---------------|------------------------|-------------|""")
+
+total_credit_hours = total_credit()
+
+
+total_grades_point = total_grade_point()
+
+
+display_average_grade_points(total_credit_hours,total_grades_point)
+
+#Contributer: Mohsin Ali
